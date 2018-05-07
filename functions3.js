@@ -64,7 +64,7 @@ console.log(filterFalsy([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 function reverseNum(number) {
     var string = "" + number;
     var resString = "";
-    for (i = string.length - 1; i >= 0; i--) { 
+    for (i = string.length - 1; i >= 0; i--) {
         resString += string[i];
     }
     return parseInt(resString);
@@ -78,15 +78,17 @@ console.log(reverseNum(12345));
     [7, 9, 0, -2] -> -2
     [7, 9, 0, -2], 2 -> [0, -2]  */
 
-    function getLast (array, n) {
-        newArray = [];
+function getLast(array, n) {
+    newArray = [];
     for (i = array.length - n; i < array.length; i++) {
         newArray[newArray.length] = array[i]
     }
     return newArray;
-    }
+}
 
-    console.log(getLast([7, 9, 0, -2], 3));
+console.log(getLast([7, 9, 0, -2], 3));
+
+
 
 /* Zadatak 6
     Write a function to create a specified number of elements with pre-filled numeric value array.
@@ -94,15 +96,15 @@ console.log(reverseNum(12345));
     6, 0 -> [0, 0, 0, 0, 0, 0]
     2, "none" -> ["none", "none"]
     2 -> [null, null] */
-    
-function a (b, element = null) {
+
+function a(b, element = null) {
     newArr = [];
     for (var i = 0; i <= b - 1; i++) {
-      newArr[i] = element;
+        newArr[i] = element;
     }
     return newArr;
-  }
-  console.log(a(5, 3));
+}
+console.log(a(5, 3));
 
 
 /* Zadatak 7
@@ -112,17 +114,17 @@ function a (b, element = null) {
   E.g.: The first perfect number is 6, because 1, 2 and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: (1 + 2 + 3 + 6) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128. */
 
 
-    function perfectNumber(number) {
-            var sum = 0;
-            for (var i = 1; i < number; i++) {
-              if (number % i === 0) {
-                sum += i;
-              }
-            }
-            return sum === number ? true : false;
-          }
-          
-          console.log(perfectNumber(28));
+function perfectNumber(number) {
+    var sum = 0;
+    for (var i = 1; i < number; i++) {
+        if (number % i === 0) {
+            sum += i;
+        }
+    }
+    return sum === number ? true : false;
+}
 
-  
+console.log(perfectNumber(28));
+
+
 

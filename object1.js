@@ -112,20 +112,42 @@ console.log(php.isInJS());
     Add a method that changes the type of cuisine to the given value. 
     Add a method that delete a given ingredient from the list of ingredients.  */
 
-    function bestRecipe(name, type, rang, ingred, time, howTo) {
-        
+    function createRecipe(name, type, range, ingred, time, howTo) { 
         var dish = {
         nameOfTheDish: name,
         typeOfCuisine: type,
-        complexity: rang,
+        complexity: range,
         listOfIngredients: ingred,
         preparingTime: time,
-        instruction: howTo,
+        instruction: "",
         necessaryIngredients: function () {
-        
+            for(var i = 0; i < dish.listOfIngredients.length; i++) {
+                console.log(dish.listOfIngredients[i]);
+            }
+        },
+        canBePrepared: function() {
+             if (dish.preparingTime <= 15) {
+                 return true;
+         }
+          return false; 
+    },
+        changesType: function (newType) {
+            dish.typeOfCuisine = newType;
+        },
+        removeIngrediant: function(ingrediant) {
+            for(var i = 0; i < dish.listOfIngredients.length; i++) {
+                if (dish.listOfIngredients[i] === ingrediant) {
+                delete dish.listOfIngredients[i];
+            }
         }
     }
+}
     return dish;
 }
-console.log(bestRecipe("piletina", "chinese", "5", ["chicken", "potato", "spices"],"90min", "read the recipe carefully"));
-console.log(bestRecipe())
+var list = ["piletina", "tartar", "krompir"];
+var piletina = createRecipe("piletina", "chinese", 5, list, 90, "read the recipe carefully");
+
+console.log(piletina);
+piletina.necessaryIngredients();
+piletina.changesType("ruska");
+piletina.removeIngrediant("tartar");
