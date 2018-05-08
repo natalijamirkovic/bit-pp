@@ -128,3 +128,12 @@ console.log(perfectNumber(28));
 
 
 
+function multiply(a, b) {
+   var mResult = a * b;
+   return function (a, b) {
+       return mResult + a + b;
+   }
+}
+
+var output = multiply(3, 4);
+console.log(output);
